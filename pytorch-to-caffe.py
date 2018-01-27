@@ -282,6 +282,8 @@ def get_me_my_prototxt(model):
 			n.pool_final = L.Pooling(n.conv2, kernel_size=m.classifier[i_].kernel_size, stride=m.classifier[i_].stride, pool=P.Pooling.AVE)
 
 
+	n.prob = L.Softmax(n.pool_final)
+
 	return n.to_proto()
 
 def get_me_my_caffemodel(protofile, model):
