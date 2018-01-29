@@ -270,7 +270,7 @@ def get_me_my_prototxt(model):
 		
 		elif isinstance(m.classifier[i_], torch.nn.modules.conv.Conv2d):
 
-			n.conv2 = L.Convolution(n.fire8_concat, num_output=m.classifier[i_].out_channels, kernel_size=m.classifier[i_].kernel_size[0],
+			n.conv2 = L.Convolution(n.drop1, num_output=m.classifier[i_].out_channels, kernel_size=m.classifier[i_].kernel_size[0],
 										 stride=m.classifier[i_].stride[0], pad=m.classifier[i_].padding[0])
 		
 		elif isinstance(m.classifier[i_], torch.nn.modules.activation.ReLU):
